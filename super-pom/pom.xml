@@ -52,6 +52,7 @@
 	<properties>
 		<!-- CUSTOM PROPERTIES -->
 		<mvn.scm.url>scm:git:https://github.com/jbrasileiro/ex-maven-release-plugin.git</mvn.scm.url>
+		<maven.deploy.skip>true</maven.deploy.skip>
 	</properties>
 	<build>
 		<plugins>
