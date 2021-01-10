@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.jbrasileiro</groupId>
 	<artifactId>ex-maven-release-plugin-super-pom</artifactId>
-	<version>0.0.0.4-SNAPSHOT</version>
+	<version>0.0.0.6-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>Example maven-release-plugin (super-pom) [${project.version}]</name>
 	<url>https://github.com/jbrasileiro/ex-maven-release-plugin</url>
@@ -131,16 +131,13 @@
 						<phase>install</phase>
 						<goals>
 							<goal>clean</goal>
-							<goal>update-versions</goal>
 							<goal>prepare</goal>
 							<goal>perform</goal>
 						</goals>
 						<configuration>
-							<tag>${mvn-timestamp-version}</tag>
 							<autoVersionSubmodules>true</autoVersionSubmodules>
 							<useReleaseProfile>false</useReleaseProfile>
 							<dryRun>true</dryRun>
-							<allowTimestampedSnapshots>true</allowTimestampedSnapshots>
 						</configuration>
 					</execution>
 				</executions>
