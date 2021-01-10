@@ -1,0 +1,79 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.github.jbrasileiro</groupId>
+	<artifactId>ex-maven-release-plugin-super-pom</artifactId>
+	<version>0.0.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>Example maven-release-plugin (super-pom) [${project.version}]</name>
+	<url>https://github.com/jbrasileiro/ex-maven-release-plugin</url>
+	<organization>
+		<name>jbrasileiro</name>
+		<url>https://github.com/jbrasileiro</url>
+	</organization>
+	<description>
+		Example maven-release-plugin (POM)
+	</description>
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0</url>
+		</license>
+	</licenses>
+	<scm>
+		<url>${mvn.scm.url}</url>
+		<connection>${mvn.scm.url}</connection>
+		<developerConnection>${mvn.scm.url}</developerConnection>
+	</scm>
+	<distributionManagement>
+		<snapshotRepository>
+			<id>OSSRH-snapshot</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<repository>
+			<id>OSSRH-release</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+		</repository>
+	</distributionManagement>
+	<developers>
+		<developer>
+			<name>João Carlos Brasileiro</name>
+			<email>jbrasileiro.git@gmail.com</email>
+			<url>https://github.com/jbrasileiro</url>
+			<roles>
+				<role>Java Developer</role>
+			</roles>
+		</developer>
+	</developers>
+	<issueManagement>
+		<system>GitHub Issues</system>
+		<url>https://github.com/jbrasileiro/ex-maven-release-plugin/issues</url>
+	</issueManagement>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<configuration>
+					<tag>${mvn-timestamp-version}</tag>
+					<autoVersionSubmodules>true</autoVersionSubmodules>
+					<useReleaseProfile>true</useReleaseProfile>
+					<dryRun>false</dryRun>
+					<allowTimestampedSnapshots>false</allowTimestampedSnapshots>
+				</configuration>
+				<executions>
+					<execution>
+						<id>TIMESTAMP release</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>clean</goal>
+							<goal>prepare</goal>
+							<goal>perform</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

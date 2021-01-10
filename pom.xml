@@ -1,0 +1,44 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>ex-maven-release-plugin</artifactId>
+	<packaging>pom</packaging>
+	<name>Example maven-release-plugin [${project.version}]</name>
+	<url>https://github.com/jbrasileiro/ex-maven-release-plugin</url>
+	<parent>
+		<groupId>com.github.osp-huhula</groupId>
+		<artifactId>ex-maven-release-plugin-super-pom</artifactId>
+		<version>0.0.0.0-SNAPSHOT</version>
+		<relativePath>super-pom/pom.xml</relativePath>
+	</parent>
+	<modules>
+		<module>super-pom</module>
+	</modules>
+	<organization>
+		<name>jbrasileiro</name>
+		<url>https://github.com/jbrasileiro</url>
+	</organization>
+	<description>
+		Example maven-release-plugin (POM)
+	</description>
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0</url>
+		</license>
+	</licenses>
+	<scm>
+		<url>${mvn.scm.url}</url>
+		<connection>${mvn.scm.url}</connection>
+		<developerConnection>${mvn.scm.url}</developerConnection>
+  </scm>
+	<distributionManagement>
+		<snapshotRepository>
+			<id>OSSRH-snapshot</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<repository>
+			<id>OSSRH-release</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+		</repository>
+	</distributionManagement>
+</project>
