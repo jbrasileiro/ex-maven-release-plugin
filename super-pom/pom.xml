@@ -138,6 +138,7 @@
 							<autoVersionSubmodules>true</autoVersionSubmodules>
 							<useReleaseProfile>false</useReleaseProfile>
 							<dryRun>false</dryRun>
+							<allowTimestampedSnapshots>true</allowTimestampedSnapshots>
 						</configuration>
 					</execution>
 				</executions>
