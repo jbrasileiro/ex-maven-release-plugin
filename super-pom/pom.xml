@@ -117,7 +117,6 @@
 						<goals>
 							<goal>clean</goal>
 							<goal>prepare</goal>
-							<goal>perform</goal>
 						</goals>
 						<configuration>
 							<preparationGoals>-q clean verify</preparationGoals>
