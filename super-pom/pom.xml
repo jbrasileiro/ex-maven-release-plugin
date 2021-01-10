@@ -127,8 +127,7 @@
 				<artifactId>maven-release-plugin</artifactId>
 				<executions>
 					<execution>
-						<id>TIMESTAMP release</id>
-						<phase>install</phase>
+						<phase>deploy</phase>
 						<goals>
 							<goal>clean</goal>
 							<goal>prepare</goal>
@@ -139,6 +138,7 @@
 							<useReleaseProfile>false</useReleaseProfile>
 							<dryRun>false</dryRun>
 							<allowTimestampedSnapshots>true</allowTimestampedSnapshots>
+							<tagNameFormat>${project.version}</tagNameFormat>
 						</configuration>
 					</execution>
 				</executions>
