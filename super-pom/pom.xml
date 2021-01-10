@@ -140,7 +140,7 @@
 							<useReleaseProfile>false</useReleaseProfile>
 							<dryRun>false</dryRun>
 							<allowTimestampedSnapshots>true</allowTimestampedSnapshots>
-							<tagNameFormat>${project.version}</tagNameFormat>
+							<tagNameFormat>${releaseVersion}</tagNameFormat>
 						</configuration>
 					</execution>
 				</executions>
