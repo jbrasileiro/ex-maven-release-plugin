@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.jbrasileiro</groupId>
 	<artifactId>ex-maven-release-plugin-super-pom</artifactId>
-	<version>0.0.0.10-SNAPSHOT</version>
+	<version>0.0.0.10</version>
 	<packaging>pom</packaging>
 	<name>Example maven-release-plugin (super-pom) [${project.version}]</name>
 	<url>https://github.com/jbrasileiro/ex-maven-release-plugin</url>
@@ -23,7 +23,7 @@
 		<url>${mvn.scm.url}</url>
 		<connection>${mvn.scm.url}</connection>
 		<developerConnection>${mvn.scm.url}</developerConnection>
-	  <tag>ex-maven-release-plugin-super-pom-0.0.0.0</tag>
+	  <tag>ex-maven-release-plugin-super-pom-0.0.0.10</tag>
   </scm>
 	<distributionManagement>
 		<snapshotRepository>
