@@ -56,6 +56,73 @@
 	<build>
 		<plugins>
 			<plugin>
+			    <groupId>org.codehaus.mojo</groupId>
+			    <artifactId>build-helper-maven-plugin</artifactId>
+			    <version>${version.build-helper-maven-plugin}</version>
+				<configuration>
+					<locale>en_US</locale>
+					<timeZone>GMT-3:00</timeZone>
+				</configuration>
+				<executions>
+					<execution>
+						<id>generate-timestamp</id>
+						<phase>validate</phase>
+						<goals>
+							<goal>timestamp-property</goal>
+						</goals>
+						<configuration>
+							<name>mvn.timestamp</name>
+							<pattern>yyyyMMddHHmmss</pattern>
+						</configuration>
+					</execution>
+					<execution>
+						<id>generate-timestamp-formatted</id>
+						<phase>validate</phase>
+						<goals>
+							<goal>timestamp-property</goal>
+						</goals>
+						<configuration>
+							<name>mvn.timestamp.formatted</name>
+							<pattern>yyyy-MM-dd HH:mm:ss</pattern>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>${version-maven-antrun-plugin}</version>
+				<executions>
+					<execution>
+						<id>echo-system-properties</id>
+						<phase>validate</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<configuration>
+							<target>
+								<echo>Displaying value of all property</echo>
+								<property environment="env" />
+								<echoproperties />
+							</target>
+							<skip>${mvn.antrun.config.skip.echoproperties}</skip>
+						</configuration>
+					</execution>
+					<execution>
+						<id>show-timestamp</id>
+						<phase>validate</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<configuration>
+							<target>
+								<echo>Displaying value of timestamp property mvn.timestamp: ${mvn.timestamp} (${mvn.timestamp.formatted})</echo>
+							</target>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-release-plugin</artifactId>
 				<configuration>
