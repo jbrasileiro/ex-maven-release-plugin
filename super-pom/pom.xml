@@ -137,7 +137,7 @@
 						<configuration>
 							<autoVersionSubmodules>true</autoVersionSubmodules>
 							<useReleaseProfile>false</useReleaseProfile>
-							<dryRun>true</dryRun>
+							<dryRun>false</dryRun>
 						</configuration>
 					</execution>
 				</executions>
