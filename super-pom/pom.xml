@@ -135,6 +135,7 @@
 							<goal>perform</goal>
 						</goals>
 						<configuration>
+							<preparationGoals>-q clean verify</preparationGoals>
 							<autoVersionSubmodules>true</autoVersionSubmodules>
 							<useReleaseProfile>false</useReleaseProfile>
 							<dryRun>false</dryRun>
